@@ -20,7 +20,7 @@ const Todolist = ({ todos, setTodos }) => {
   return (
     <div>
       <div className="mt-5">
-        The Uncompleted list
+        The incompleted list
         <div className="row">
           {todos.map((todo) => (
             <li className={`col-3 ${todo.completed ? "d-none" : ""} mt-3 me-3 ps-3`} key={todo.id}>
@@ -35,7 +35,7 @@ const Todolist = ({ todos, setTodos }) => {
         </div>
       </div>
       <div className="mt-5">
-        The Completed list
+        The completed list
         <div className="row">
           {todos.map((todo) => (
             <li className={`col-3 ${!todo.completed ? "d-none" : ""} mt-3 me-3`} key={todo.id}>
