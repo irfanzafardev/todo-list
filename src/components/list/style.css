@@ -10,11 +10,10 @@ li {
   padding: 20px 30px 20px 20px;
 }
 
-.form {
-  background-color: transparent;
-  width: 50%;
-}
-
 .button {
   cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
 }
