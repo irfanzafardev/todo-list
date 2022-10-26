@@ -7,10 +7,10 @@ import List from '../list/List';
 const Layout = () => {
   const [titleInput, setTitleInput] = useState('')
   const [contextInput, setContextInput] = useState('')
-  const [todos, setTodos] = useState([{ id: 1, title: "titleInput", context: "contextInput", completed: false }])
+  const [todos, setTodos] = useState([{ id: 1, title: "Title", context: "Description", completed: false }, { id: 2, title: "Title", context: "Description", completed: true }, ])
   return (
     <div>
-      <div className="container">
+      <div className="container mb-5">
         <Header />
         <Form titleInput={titleInput} setTitleInput={setTitleInput} contextInput={contextInput} setContextInput={setContextInput} todos={todos} setTodos={setTodos}/>
         <List todos={todos} setTodos={setTodos} />

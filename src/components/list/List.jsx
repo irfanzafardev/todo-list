@@ -21,29 +21,34 @@ const Todolist = ({ todos, setTodos }) => {
     <div>
       <div className="mt-5">
         The Uncompleted list
-        {todos.map((todo) => (
-          <li className={`${todo.completed ? "d-none" : ""} `} key={todo.id}>
-            <h4>{todo.title}</h4>
-            <p>{todo.context}</p>
-            <div className="action-btn d-flex">
-              <div className='button text-primary' onClick={() => handleComplete(todo)}>Done</div>
-              <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
-            </div>
-          </li>
-        ))}
+        <div className="row">
+          {todos.map((todo) => (
+            <li className={`col-3 ${todo.completed ? "d-none" : ""} mt-3 me-3 ps-3`} key={todo.id}>
+              <h4>{todo.title}</h4>
+              <p>{todo.context}</p>
+              <div className="action-btn d-flex">
+                <div className='button text-primary' onClick={() => handleComplete(todo)}>Done</div>
+                <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
+              </div>
+            </li>
+          ))}
+        </div>
       </div>
       <div className="mt-5">
         The Completed list
-        {todos.map((todo) => (
-          <li className={`${!todo.completed ? "d-none" : ""} `} key={todo.id}>
-            <h4>{todo.title}</h4>
-            <p>{todo.context}</p>
-            <div className="action-btn d-flex">
-              <div className='button text-secondary' onClick={() => handleComplete(todo)}>Cancel</div>
-              <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
-            </div>
-          </li>
-        ))}
+        <div className="row">
+          {todos.map((todo) => (
+            <li className={`col-3 ${!todo.completed ? "d-none" : ""} mt-3 me-3`} key={todo.id}>
+              <h4>{todo.title}</h4>
+              <p>{todo.context}</p>
+              <div className="action-btn d-flex">
+                <div className='button text-secondary' onClick={() => handleComplete(todo)}>Cancel</div>
+                <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
+              </div>
+            </li>
+          ))}
+        </div>
+
       </div>
 
     </div >

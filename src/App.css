@@ -3,7 +3,6 @@ li {
   list-style: none;
   width: 50%;
   height: 100%;
-  border: 1px solid gray;
   border-radius: 6px;
   margin-top: 25px;
   display: "flex";

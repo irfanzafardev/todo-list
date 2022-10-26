@@ -12,7 +12,7 @@ const Header = () => {
           React
         </div>
       </nav>
-      <h2>My to-do list</h2>
+      <h2>My To-do List</h2>
       <p>By Irfan Zafar</p>
     </div>
   )
