@@ -23,7 +23,7 @@ const Form = ({ titleInput, setTitleInput, contextInput, setContextInput, todos,
         <div className="form d-flex">
           <label htmlFor="title" className="form-label align-self-center pt-2">Title</label>
           <input type="text" className="form-control ms-3" placeholder="Enter something to do" id="title" value={titleInput} onChange={onTitleChange} required></input>
-          <label htmlFor="context" className="form-label align-self-center pt-2 ms-3">Context</label>
+          <label htmlFor="context" className="form-label align-self-center pt-2 ms-3">Content</label>
           <input type="text" className="form-control ms-3" placeholder="Enter the detail" id="context" value={contextInput} onChange={onContextChange} required></input>
         </div>
         <div className="">

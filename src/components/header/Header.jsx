@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.css';
 
 const Header = () => {
   return (
@@ -9,10 +8,10 @@ const Header = () => {
           <div className="d-flex justify-content-between">
             <div className="">Personal Task</div>
           </div>
-          React
+          React Hooks
         </div>
       </nav>
-      <h2>My To-do List</h2>
+      <h2>My To-do List v1</h2>
       <p>By Irfan Zafar</p>
     </div>
   )
