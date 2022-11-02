@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Dialog from './Dialog'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import './style.css'
 
 const Todolist = ({ todos, setTodos }) => {
@@ -13,8 +16,13 @@ const Todolist = ({ todos, setTodos }) => {
     )
   }
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const handleDelete = ({ id }) => {
     setTodos(todos.filter((todo) => todo.id !== id))
+    setShow(false);
   }
 
   return (
@@ -28,7 +36,21 @@ const Todolist = ({ todos, setTodos }) => {
               <p>{todo.context}</p>
               <div className="action-btn d-flex">
                 <div className='button text-primary' onClick={() => handleComplete(todo)}>Done</div>
-                <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
+                <div className='button text-danger ms-3' onClick={handleShow}>Delete</div>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Delete Item</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>Are you sure you want to delete this?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={() => handleDelete(todo)}>
+                      Delete
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </li>
           ))}
@@ -43,14 +65,27 @@ const Todolist = ({ todos, setTodos }) => {
               <p>{todo.context}</p>
               <div className="action-btn d-flex">
                 <div className='button text-secondary' onClick={() => handleComplete(todo)}>Cancel</div>
-                <div className='button text-danger ms-3' onClick={() => handleDelete(todo)}>Delete</div>
+                <div className='button text-danger ms-3' onClick={handleShow}>Delete</div>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Delete Item</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>Are you sure you want to delete this?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={() => handleDelete(todo)}>
+                      Delete
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </li>
           ))}
         </div>
 
       </div>
-
     </div >
   )
 }
